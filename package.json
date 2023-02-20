@@ -1,0 +1,52 @@
+{
+  "name": "openai-streams",
+  "description": "Tools for working with OpenAI streams in Node.js and TypeScript.",
+  "version": "1.0.21",
+  "license": "MIT",
+  "type": "module",
+  "platform": "node",
+  "engines": {
+    "node": ">=18"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js"
+  },
+  "scripts": {
+    "dev": "tsmodule dev",
+    "docs": "yarn typedoc src",
+    "prebuild": "yarn docs",
+    "build": "tsmodule build",
+    "test": "ava",
+    "pretest": "yarn build",
+    "prepublishOnly": "yarn test",
+    "lint": "eslint src --fix"
+  },
+  "devDependencies": {
+    "@tsmodule/tsmodule": "^41.28.0",
+    "@types/node": "^18.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "ava": "^5.2.0",
+    "eslint": "^8.34.0",
+    "typedoc": "^0.23.25",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "eventsource-parser": "^0.1.0",
+    "yield-stream": "^2.0.4"
+  },
+  "keywords": [
+    "openai",
+    "typescript",
+    "streams",
+    "gpt-3"
+  ],
+  "homepage": "https://github.com/nolancassidy/realtime-openai"
+}
